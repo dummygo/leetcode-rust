@@ -41,7 +41,10 @@ impl Solution {
         let mid = left + (right - left) / 2;
         if num[mid] == target {
             return mid as i32;
-        } else if num[left] <= num[mid] {                           // Equals comparison is necessary for the case where mid converges to become equal to left
+        
+        }    
+        // Equals comparison is necessary for the case where mid converges to become equal to left
+        else if num[left] <= num[mid] {   
             if target < num[mid] && target >= num[left] {
                 if mid == 0 { break; } else { right = mid - 1; }
             } else {
